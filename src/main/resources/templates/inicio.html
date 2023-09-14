@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head th:replace="layout/layout :: head"></head>
+<body>
+    <div id="wrapper">
+		<ul th:replace="layout/layout :: sidebar"></ul>
+		<div id="content-wrapper" class="d-flex flex-column">
+			<div id="content">
+				<nav th:replace="layout/layout :: navbar"></nav>
+			</div>
+		</div>
+	</div>
+    <script th:src="@{/js/bootstrap.min.js}"></script>
+    <footer th:replace="layout/layout :: footer"></footer>
+</body>
+</html>

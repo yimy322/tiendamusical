@@ -1,0 +1,9 @@
+.bg{
+    background-image: url(../img/fondo.jpg);
+    background-position: center center;
+    background-size: cover;
+}
+body{
+    background: #ffe259;
+    background: linear-gradient(to right, #005869, #63628e);
+}
