@@ -11,6 +11,8 @@ public class Common {
 	@Column(name = "fecha_creacion", nullable = false)
 	private Date fechaCreacion;
 
+	@Column(name = "fecha_modificacion", nullable = false)
+	private Date fechaModificacion;
 	
 	@Column(name = "estatus")
 	private boolean estatus;
@@ -29,6 +31,14 @@ public class Common {
 
 	public void setEstatus(boolean estatus) {
 		this.estatus = estatus;
+	}
+
+	public Date getFechaModificacion() {
+		return fechaModificacion;
+	}
+
+	public void setFechaModificacion(Date fechaModificacion) {
+		this.fechaModificacion = fechaModificacion;
 	}
 	
 }

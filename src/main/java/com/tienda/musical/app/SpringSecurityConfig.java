@@ -40,6 +40,7 @@ public class SpringSecurityConfig {
                 authz.requestMatchers(mvc.pattern("/"),
                 		mvc.pattern("/css/**"),
                 		mvc.pattern("/img/**"),
+                		mvc.pattern("/registro/**"),
                         mvc.pattern("/js/**")).permitAll()
                         .anyRequest().authenticated();
 

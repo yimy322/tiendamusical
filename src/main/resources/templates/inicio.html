@@ -2,15 +2,84 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head th:replace="layout/layout :: head"></head>
 <body>
-    <div id="wrapper">
+	<div id="wrapper">
 		<ul th:replace="layout/layout :: sidebar"></ul>
 		<div id="content-wrapper" class="d-flex flex-column">
 			<div id="content">
 				<nav th:replace="layout/layout :: navbar"></nav>
+				<div class="container-fluid">
+					<!-- Page Heading -->
+					<div class="d-sm-flex align-items-center justify-content-between mb-4">
+						<h1 class="h3 mb-0 text-gray-800">Inicio</h1>
+						<a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+								class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+					</div>
+					<!-- Content Row -->
+					<div class="row">
+						<div class="col-xl-4 col-md-6 mb-4" th:each="album: ${albumes}">
+							<div class="card border-left-primary shadow h-100 py-2">
+								<div class="row g-0">
+									<div class="col-md-4">
+										<img th:src="@{../img/am.jpg}" class="img-fluid px-sm-1 mt-1 mb-3" alt="...">
+										<center>
+											<a href="#" class="btn btn-secondary btn-icon-split btn-sm">
+												<span class="icon text-white-50">
+													<i class="fa-solid fa-compact-disc"></i>
+												</span>
+												<span class="text" th:text="${album.artista.nombre}"></span>
+											</a>
+											<br>
+											<span class="badge bg-gradient-dark text-white"
+												th:text="'S/. '+${album.valor}"></span>
+											<br>
+											<br>
+											<a href="#" class="btn btn-success">
+												<i class="fas fa-cart-plus"></i>
+											</a>
+											<a href="#" class="btn btn-danger">
+												<i class="fas fa-music"></i>
+											</a>
+										</center>
+									</div>
+									<div class="col-md-8">
+										<div class="card-body">
+											<h5 class="card-title" th:text="${album.nombre}"></h5>
+											<div class="small font-weight-bold">December 12, 2019</div>
+											<p class="card-text" th:text="${album.descripcion}"></p>
+											<p class="card-text"><small
+													class="text-body-secondary badge bg-gradient-info text-white"
+													th:text="${album.artista.nacionalidad.descripcion}"></small></p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Fin del Row -->
+				</div>
+				<!-- Footer -->
+				<footer class="sticky-footer bg-white">
+					<div class="container my-auto">
+						<div class="copyright text-center my-auto">
+							<span>Desarrollado por Yimy
+								<hr>
+								<a href="#" class="mx-2">
+									<i class="fa-brands fa-linkedin"></i>
+								</a>
+								<a href="#" class="mx-2">
+									<i class="fa-brands fa-square-facebook"></i>
+								</a>
+								<a href="#" class="mx-2">
+									<i class="fa-brands fa-whatsapp"></i>
+								</a>
+							</span>
+						</div>
+					</div>
+				</footer>
 			</div>
 		</div>
 	</div>
-    <script th:src="@{/js/bootstrap.min.js}"></script>
-    <footer th:replace="layout/layout :: footer"></footer>
+	<footer th:replace="layout/layout :: footer"></footer>
 </body>
+
 </html>

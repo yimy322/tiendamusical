@@ -41,7 +41,7 @@ public class Persona extends Common{
 	@Column(name = "password", length = 45, nullable = false)
 	private String password;
 	
-	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	@OneToMany(fetch = FetchType.LAZY)
     @JoinColumn(name = "persona_id")//fk
     private List<Rol> roles;
 
